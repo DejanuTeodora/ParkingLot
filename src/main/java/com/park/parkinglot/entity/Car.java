@@ -24,8 +24,9 @@ import javax.persistence.Table;
 public class Car implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
+    @Id 
     @GeneratedValue(strategy = GenerationType.AUTO)
+     private Integer id;
     private String licensePlate;
 
     public void setLicensePlate(String licensePlate) {
@@ -59,7 +60,7 @@ private String parkingSpot;
 @ManyToOne(fetch = FetchType.LAZY)
 @JoinColumn(name = "USER_KEY")
 private User user;
-    private Integer id;
+   
 
     public Integer getId() {
         return id;
