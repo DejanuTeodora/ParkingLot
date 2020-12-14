@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.park.parkinglot.entity;
 
 import java.io.Serializable;
@@ -24,9 +19,9 @@ import javax.persistence.Table;
 public class Car implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id 
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-     private Integer id;
+    private Integer id;
     private String licensePlate;
 
     public void setLicensePlate(String licensePlate) {
@@ -56,11 +51,10 @@ public class Car implements Serializable {
     public User getUser() {
         return user;
     }
-private String parkingSpot;
-@ManyToOne(fetch = FetchType.LAZY)
-@JoinColumn(name = "USER_KEY")
-private User user;
-   
+    private String parkingSpot;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "USER_KEY")
+    private User user;
 
     public Integer getId() {
         return id;
@@ -79,7 +73,7 @@ private User user;
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+
         if (!(object instanceof Car)) {
             return false;
         }
@@ -94,5 +88,5 @@ private User user;
     public String toString() {
         return "com.park.parkinglot.entity.Car[ id=" + id + " ]";
     }
-    
+
 }

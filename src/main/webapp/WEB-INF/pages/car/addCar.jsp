@@ -9,7 +9,7 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <t:pageTemplate pageTitle="Add Car">
     <h1>Add Car</h1>
-    <form class="needs-validation" novalidate method="POST" action="${pageContext.request.contextPath}/AddCar">
+    <form class="needs-validation" novalidate method="POST" action="${pageContext.request.contextPath}/Cars/Create">
         <div class="row">
             <div class="col-md-6 nb-3">
                 <label for="licence_plate">License Plate</label>
@@ -39,37 +39,37 @@
                 </select>
                 <input type="hidden" name="car_id" value ="${car.id}"/>
                 <button class=" btn btn-primary btn-lg btn-block" type="submit">Save</button>
-                    <div class="invalid-feedback">
+                <div class="invalid-feedback">
                     Owner is required.
-                   
+
                 </div>
             </div>
         </div>
     </form>
 
-        
-         <script>
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
-      (function() {
-        'use strict';
 
-        window.addEventListener('load', function() {
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.getElementsByClassName('needs-validation');
+    <script>
 
-          // Loop over them and prevent submission
-          var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-              if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add('was-validated');
+        (function () {
+            'use strict';
+
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
             }, false);
-          });
-        }, false);
-      })();
+        })();
     </script>
-        
-    
+
+
 </t:pageTemplate>

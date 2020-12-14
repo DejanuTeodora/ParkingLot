@@ -10,7 +10,7 @@
 
 <t:pageTemplate pageTitle="Edit car">
     <h1>Edit Car</h1>
-    <form class="needs-validation" novalidate method="POST" action="${pageContext.request.contextPath}/EditCar">
+    <form class="needs-validation" novalidate method="POST" action="${pageContext.request.contextPath}/Cars/Update">
         <div class="row">
             <div class="col-md-6 mb-3">
                 <label for="license_plate">License Plate</label>
@@ -47,22 +47,22 @@
         <button class="btn btn-primary btn-lg btn-block" type="submit">Save</button>
     </form>
     <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function () 
+
+        (function ()
         {
             'use strict'
 
-            window.addEventListener('load', function () 
+            window.addEventListener('load', function ()
             {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+
                 var forms = document.getElementsByClassName('needs-validation');
 
-                // Loop over them and prevent submission
-                Array.prototype.filter.call(forms, function (form) 
+
+                Array.prototype.filter.call(forms, function (form)
                 {
-                    form.addEventListener('submit', function (event) 
+                    form.addEventListener('submit', function (event)
                     {
-                        if (form.checkValidity() === false) 
+                        if (form.checkValidity() === false)
                         {
                             event.preventDefault();
                             event.stopPropagation();
